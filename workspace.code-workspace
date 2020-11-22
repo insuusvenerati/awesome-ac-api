@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "../cra-testing/mongo-dev"
+    },
+    {
+      "path": "."
+    },
+    {
+      "path": "../awesome-ac"
+    },
+    {
+      "path": "../docker-typesense"
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "awesome-ac/node_modules/typescript/lib"
+  }
+}

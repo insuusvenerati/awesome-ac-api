@@ -1,8 +1,21 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+
+  const options = new DocumentBuilder()
+    .setTitle('Awesome AC API')
+    .setDescription('REST API for Animal Crossing New Horizons')
+    .build();
+  const document = SwaggerModule.createDocument(app, options, {
+    operationIdFactory: (controllerKey: string) => controllerKey.slice(0, 9),
+  });
+  SwaggerModule.setup('api', app, document);
+  app.enableCors();
+  app.useGlobalPipes(new ValidationPipe());
+  await app.listen(1337);
 }
 bootstrap();
