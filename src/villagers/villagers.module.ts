@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Villager, VillagerSchema } from './villager.schema';
+import { Villager, VillagerSchema } from './villager.entity';
 import { VillagersController } from './villagers.controller';
 import { VillagersService } from './villagers.service';
 

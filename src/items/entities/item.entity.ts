@@ -14,37 +14,37 @@ export class Item {
   @Prop()
   name: string;
   @Prop()
-  patternTitle: null;
+  patternTitle: unknown;
   @Prop()
   diy: boolean;
   @Prop()
-  patternCustomize: boolean | null;
+  patternCustomize: boolean | unknown;
   @Prop()
-  kitType: string | null;
+  kitType: string | unknown;
   @Prop()
   size: string;
   @Prop()
   surface: boolean;
   @Prop()
-  exchangePrice: null;
+  exchangePrice: unknown;
   @Prop()
-  exchangeCurrency: null;
+  exchangeCurrency: unknown;
   @Prop()
-  sourceNotes: string | null;
+  sourceNotes: string | unknown;
   @Prop()
   hhaBasePoints: number;
   @Prop()
-  hhaCategory: null;
+  hhaCategory: unknown;
   @Prop()
-  interact: string | null;
+  interact: string | unknown;
   @Prop()
   tag: string;
   @Prop()
   outdoor: boolean;
   @Prop()
-  speakerType: string | null;
+  speakerType: string | unknown;
   @Prop()
-  lightingType: string | null;
+  lightingType: string | unknown;
   @Prop()
   catalog: string;
   @Prop()
@@ -54,7 +54,7 @@ export class Item {
   @Prop()
   unlockNotes: string;
   @Prop()
-  set: null;
+  set: unknown;
   @Prop()
   series: string;
   @Prop()
@@ -70,7 +70,7 @@ class Variant {
   variantId: string;
   uniqueEntryId: string;
   colors: Array<string>;
-  pattern: string | null;
+  pattern: string | unknown;
   bodyCustomize: boolean;
   bodyTitle: string;
   source: Array<string>;

@@ -13,7 +13,7 @@ export class ReactionsService {
     return await this.reactionModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} reaction`;
+  async findOne(id: number): Promise<Reaction> {
+    return await this.reactionModel.findById(id).exec();
   }
 }

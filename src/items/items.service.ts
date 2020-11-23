@@ -11,14 +11,9 @@ export class ItemsService {
     return this.itemModel.find().exec();
   }
 
-  async findOneByInternalId(id: number) {
-    return await this.itemModel.find({ 'variants.internalId': id }).exec();
-  }
-
-  async findOneVariantByUnqiueId(id: string) {
-    console.log(typeof id);
+  async findOneVariantByUnqiueId(uniqueEntryId: string): Promise<Item> {
     return await this.itemModel
-      .findOne({ 'variants.uniqueEntryId': id })
+      .findOne({ 'variants.uniqueEntryId': uniqueEntryId })
       .exec();
   }
 }
