@@ -1,16 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
+import { AchievementsModule } from './achievements/achievements.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ItemsModule } from './items/items.module';
 import { NookmilesModule } from './nookmiles/nookmiles.module';
 import { ReactionsModule } from './reactions/reactions.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { VillagersModule } from './villagers/villagers.module';
-import { ItemsModule } from './items/items.module';
-import { AchievementsModule } from './achievements/achievements.module';
 
 @Module({
   imports: [
@@ -24,10 +22,6 @@ import { AchievementsModule } from './achievements/achievements.module';
     RecipesModule,
     NookmilesModule,
     ReactionsModule,
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'src'),
-      exclude: ['/api*'],
-    }),
     ItemsModule,
     AchievementsModule,
   ],
