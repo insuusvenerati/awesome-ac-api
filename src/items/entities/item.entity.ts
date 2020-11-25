@@ -10,6 +10,9 @@ export class Item {
   _id: { $oid: string };
 
   @Prop()
+  id: string;
+
+  @Prop()
   sourceSheet: string;
   @Prop()
   name: string;

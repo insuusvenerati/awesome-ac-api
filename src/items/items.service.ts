@@ -11,6 +11,10 @@ export class ItemsService {
     return this.itemModel.find().exec();
   }
 
+  async findItemById(id: string) {
+    return await this.itemModel.findOne({ id: id });
+  }
+
   async findOneVariantByUnqiueId(uniqueEntryId: string): Promise<Item> {
     return await this.itemModel
       .findOne({ 'variants.uniqueEntryId': uniqueEntryId })
